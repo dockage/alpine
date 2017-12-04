@@ -4,7 +4,7 @@
     </a>
 </p>
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/dockage/alpine.svg?style=flat)](https://hub.docker.com/r/dockage/alpine/) [![Docker Stars](https://img.shields.io/docker/stars/dockage/alpine.svg?style=flat)](https://hub.docker.com/r/dockage/alpine/) [![MicroBadger](https://images.microbadger.com/badges/image/dockage/alpine.svg)](https://microbadger.com/images/dockage/alpine) [![Docker Automated build](https://img.shields.io/docker/automated/dockage/alpine.svg?style=flat)](https://hub.docker.com/r/dockage/alpine/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dockage/alpine.svg)](https://hub.docker.com/r/dockage/alpine/) [![Docker Stars](https://img.shields.io/docker/stars/dockage/alpine.svg?style=flat)](https://hub.docker.com/r/dockage/alpine/) [![MicroBadger](https://images.microbadger.com/badges/image/dockage/alpine:3.7.svg)](https://microbadger.com/images/dockage/alpine:3.7) [![Docker Build Status](https://img.shields.io/docker/build/dockage/alpine.svg)](https://hub.docker.com/r/dockage/alpine/) [![Docker Automated build](https://img.shields.io/docker/automated/dockage/alpine.svg)](https://hub.docker.com/r/dockage/alpine/)
 
 Dockerfile to build a alpine baseimage with a couple of extra packages.
 
