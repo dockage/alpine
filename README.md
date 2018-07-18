@@ -17,7 +17,6 @@ Dockerfile to build a alpine baseimage with a couple of extra packages.
 
 The image installs the following extra packages:
 
-- [`net-tools`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/net-tools)
 - [`ca-certificates`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/ca-certificates)
 - [`nano`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/nano)
 - [`tar`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/tar)
