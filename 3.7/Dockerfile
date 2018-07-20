@@ -8,4 +8,4 @@ LABEL org.label-schema.name="alpine" \
         org.label-schema.version="3.7" \
         org.label-schema.license="MIT"
 
-RUN apk add --no-cache su-exec ca-certificates nano tar curl findutils
+RUN apk add --no-cache su-exec ca-certificates nano curl findutils

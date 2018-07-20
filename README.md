@@ -19,7 +19,6 @@ The image installs the following extra packages:
 
 - [`ca-certificates`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/ca-certificates)
 - [`nano`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/nano)
-- [`tar`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/tar)
 - [`curl`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/curl)
 - [`findutils`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/findutils)
 - [`su-exec`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/su-exec)

@@ -9,7 +9,7 @@ LABEL org.label-schema.name="alpine" \
         org.label-schema.license="MIT"
 
 RUN set -x \
-    && apk add --update --no-cache openrc su-exec ca-certificates nano tar curl findutils \
+    && apk add --update --no-cache openrc su-exec ca-certificates nano curl findutils \
     # Disable getty's
     && sed -i 's/^\(tty\d\:\:\)/#\1/g' /etc/inittab \
     && sed -i \
