@@ -8,8 +8,10 @@ LABEL org.label-schema.name="alpine" \
         org.label-schema.version="3.7-openrc" \
         org.label-schema.license="MIT"
 
-RUN set -x \
-    && apk add --update --no-cache openrc su-exec ca-certificates nano curl findutils \
+RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories \
+    && echo '@edgecommunity http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories \
+    && echo '@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
+    && apk add --no-cache openrc su-exec ca-certificates nano curl findutils \
     # Disable getty's
     && sed -i 's/^\(tty\d\:\:\)/#\1/g' /etc/inittab \
     && sed -i \
