@@ -1,12 +1,12 @@
 FROM alpine:3.8
-MAINTAINER Mohammad Abdoli Rad <m.abdolirad@gmail.com>
 
-LABEL org.label-schema.name="alpine" \
-        org.label-schema.vendor="Dockage" \
-        org.label-schema.description="Alpine image that forms the base for Dockage's docker images." \
-        org.label-schema.vcs-url="https://github.com/dockage/alpine" \
-        org.label-schema.version="3.8" \
-        org.label-schema.license="MIT"
+LABEL maintainer="m.abdolirad@gmail.com" \
+    org.label-schema.name="alpine" \
+    org.label-schema.vendor="Dockage" \
+    org.label-schema.description="Alpine image that forms the base for Dockage's docker images." \
+    org.label-schema.vcs-url="https://github.com/dockage/alpine" \
+    org.label-schema.version="3.8" \
+    org.label-schema.license="MIT"
 
 RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories \
     && echo '@edgecommunity http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories \

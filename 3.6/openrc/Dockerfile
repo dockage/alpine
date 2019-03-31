@@ -1,12 +1,12 @@
 FROM alpine:3.6
-MAINTAINER Mohammad Abdoli Rad <m.abdolirad@gmail.com>
 
-LABEL org.label-schema.name="alpine" \
-        org.label-schema.vendor="Dockage" \
-        org.label-schema.description="Docker image uses openRC as a process supervision on Alpine Linux" \
-        org.label-schema.vcs-url="https://github.com/dockage/alpine" \
-        org.label-schema.version="3.6-openrc" \
-        org.label-schema.license="MIT"
+LABEL maintainer="m.abdolirad@gmail.com" \
+    org.label-schema.name="alpine" \
+    org.label-schema.vendor="Dockage" \
+    org.label-schema.description="Docker image uses openRC as a process supervision on Alpine Linux" \
+    org.label-schema.vcs-url="https://github.com/dockage/alpine" \
+    org.label-schema.version="3.6-openrc" \
+    org.label-schema.license="MIT"
 
 RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories \
     && echo '@edgecommunity http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories \
