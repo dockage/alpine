@@ -1,5 +1,6 @@
+---
 kind: pipeline
-name: default
+name: alpine3.5
 
 steps:
   - name: alpine3.5
@@ -25,3 +26,120 @@ steps:
       dockerfile: 3.5/openrc/Dockerfile
       tags:
         - '3.5-openrc'
+
+---
+kind: pipeline
+name: alpine3.6
+
+steps:
+  - name: alpine3.6
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
+      repo: dockage/alpine
+      dockerfile: 3.6/Dockerfile
+      tags:
+        - '3.6'
+
+  - name: alpine3.6-openrc
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
+      repo: dockage/alpine
+      dockerfile: 3.6/openrc/Dockerfile
+      tags:
+        - '3.6-openrc'
+
+---
+kind: pipeline
+name: alpine3.7
+
+steps:
+  - name: alpine3.7
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
+      repo: dockage/alpine
+      dockerfile: 3.7/Dockerfile
+      tags:
+        - '3.7'
+
+  - name: alpine3.7-openrc
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
+      repo: dockage/alpine
+      dockerfile: 3.7/openrc/Dockerfile
+      tags:
+        - '3.7-openrc'
+
+---
+kind: pipeline
+name: alpine3.8
+
+steps:
+  - name: alpine3.8
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
+      repo: dockage/alpine
+      dockerfile: 3.8/Dockerfile
+      tags:
+        - '3.8'
+
+  - name: alpine3.8-openrc
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
+      repo: dockage/alpine
+      dockerfile: 3.8/openrc/Dockerfile
+      tags:
+        - '3.8-openrc'
+
+---
+kind: pipeline
+name: alpine3.9
+
+steps:
+  - name: alpine3.9
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
+      repo: dockage/alpine
+      dockerfile: 3.9/Dockerfile
+      tags:
+        - '3.9'
+        - 'latest'
+
+  - name: alpine3.9-openrc
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
+      repo: dockage/alpine
+      dockerfile: 3.9/openrc/Dockerfile
+      tags:
+        - '3.9-openrc'
