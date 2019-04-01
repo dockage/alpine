@@ -1,0 +1,27 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: alpine3.5
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
+      repo: dockage/alpine
+      context: 3.5/
+      tags:
+        - '3.5'
+
+  - name: alpine3.5-openrc
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
+      repo: dockage/alpine
+      context: 3.5/openrc/
+      tags:
+        - '3.5-openrc'
