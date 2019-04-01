@@ -10,7 +10,7 @@ steps:
       password:
         from_secret: DOCKER_PASSWORD
       repo: dockage/alpine
-      context: 3.5/
+      dockerfile: 3.5/Dockerfile
       tags:
         - '3.5'
 
@@ -22,6 +22,6 @@ steps:
       password:
         from_secret: DOCKER_PASSWORD
       repo: dockage/alpine
-      context: 3.5/openrc/
+      dockerfile: 3.5/openrc/Dockerfile
       tags:
         - '3.5-openrc'
