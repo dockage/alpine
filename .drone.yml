@@ -143,3 +143,21 @@ steps:
       dockerfile: 3.9/openrc/Dockerfile
       tags:
         - '3.9-openrc'
+
+---
+kind: pipeline
+name: notify
+
+steps:
+  - name: microbadger
+    image: plugins/webhook
+    settings:
+      urls:
+        - https://hooks.microbadger.com/images/dockage/alpine/NQPdqhP-XDsT2pay1t3-AK-nI1k=
+
+depends_on:
+  - alpine3.5
+  - alpine3.6
+  - alpine3.7
+  - alpine3.8
+  - alpine3.9
