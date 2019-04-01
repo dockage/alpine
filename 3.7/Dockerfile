@@ -4,7 +4,6 @@ LABEL maintainer="m.abdolirad@gmail.com" \
     org.label-schema.name="alpine" \
     org.label-schema.vendor="Dockage" \
     org.label-schema.description="Alpine image that forms the base for Dockage's docker images." \
-    org.label-schema.vcs-url="https://github.com/dockage/alpine" \
     org.label-schema.version="3.7" \
     org.label-schema.license="MIT"
 

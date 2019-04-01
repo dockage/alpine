@@ -4,7 +4,6 @@ LABEL maintainer="m.abdolirad@gmail.com" \
     org.label-schema.name="alpine" \
     org.label-schema.vendor="Dockage" \
     org.label-schema.description="Docker image uses openRC as a process supervision on Alpine Linux" \
-    org.label-schema.vcs-url="https://github.com/dockage/alpine" \
     org.label-schema.version="3.8-openrc" \
     org.label-schema.license="MIT"
 
