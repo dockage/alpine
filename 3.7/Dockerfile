@@ -11,4 +11,4 @@ LABEL maintainer="m.abdolirad@gmail.com" \
 RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories \
     && echo '@edgecommunity http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories \
     && echo '@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
-    && apk add --no-cache su-exec ca-certificates nano curl findutils
+    && apk add --no-cache su-exec ca-certificates curl

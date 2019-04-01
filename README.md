@@ -12,15 +12,19 @@
 |**3.7-openrc**|[![MicroBadger Size (3.7-openrc)](https://img.shields.io/microbadger/image-size/dockage/alpine/3.7-openrc.svg)](https://microbadger.com/images/dockage/alpine:3.7-openrc)|[![MicroBadger Layers (3.7-openrc)](https://img.shields.io/microbadger/layers/dockage/alpine/3.7-openrc.svg)](https://microbadger.com/images/dockage/alpine:3.7-openrc)|[3.7/openrc/Dockerfile](https://github.com/dockage/alpine/blob/master/3.7/openrc/Dockerfile)|
 |**3.8**|[![MicroBadger Size (3.8)](https://img.shields.io/microbadger/image-size/dockage/alpine/3.8.svg)](https://microbadger.com/images/dockage/alpine:3.8)|[![MicroBadger Layers (3.8)](https://img.shields.io/microbadger/layers/dockage/alpine/3.8.svg)](https://microbadger.com/images/dockage/alpine:3.8)|[3.8/Dockerfile](https://github.com/dockage/alpine/blob/master/3.8/Dockerfile)|
 |**3.8-openrc**|[![MicroBadger Size (3.8-openrc)](https://img.shields.io/microbadger/image-size/dockage/alpine/3.8-openrc.svg)](https://microbadger.com/images/dockage/alpine:3.8-openrc)|[![MicroBadger Layers (3.8-openrc)](https://img.shields.io/microbadger/layers/dockage/alpine/3.8-openrc.svg)](https://microbadger.com/images/dockage/alpine:3.8-openrc)|[3.8/openrc/Dockerfile](https://github.com/dockage/alpine/blob/master/3.8/openrc/Dockerfile)|
-|**3.9**|[![MicroBadger Size (3.9)](https://img.shields.io/microbadger/image-size/dockage/alpine/3.9.svg)](https://microbadger.com/images/dockage/alpine:3.9)|[![MicroBadger Layers (3.9)](https://img.shields.io/microbadger/layers/dockage/alpine/3.9.svg)](https://microbadger.com/images/dockage/alpine:3.9)|[3.9/Dockerfile](https://github.com/dockage/alpine/blob/master/3.9/Dockerfile)|
+|**3.9, latest**|[![MicroBadger Size (3.9)](https://img.shields.io/microbadger/image-size/dockage/alpine/3.9.svg)](https://microbadger.com/images/dockage/alpine:3.9)|[![MicroBadger Layers (3.9)](https://img.shields.io/microbadger/layers/dockage/alpine/3.9.svg)](https://microbadger.com/images/dockage/alpine:3.9)|[3.9/Dockerfile](https://github.com/dockage/alpine/blob/master/3.9/Dockerfile)|
 |**3.9-openrc**|[![MicroBadger Size (3.9-openrc)](https://img.shields.io/microbadger/image-size/dockage/alpine/3.9-openrc.svg)](https://microbadger.com/images/dockage/alpine:3.9-openrc)|[![MicroBadger Layers (3.9-openrc)](https://img.shields.io/microbadger/layers/dockage/alpine/3.9-openrc.svg)](https://microbadger.com/images/dockage/alpine:3.9-openrc)|[3.9/openrc/Dockerfile](https://github.com/dockage/alpine/blob/master/3.9/openrc/Dockerfile)|
 
-Dockerfile to build a alpine baseimage with a couple of extra packages.
+Dockerfile to build a alpine baseimage with a couple of extra packages and enable some repositories.
+
+The image enable the following repositories:
+
+- `@edge` ([dl-cdn.alpinelinux.org/alpine/edge/main](http://dl-cdn.alpinelinux.org/alpine/edge/main))
+- `@edgecommunity` ([dl-cdn.alpinelinux.org/alpine/edge/community](http://dl-cdn.alpinelinux.org/alpine/edge/community))
+- `@testing` ([dl-cdn.alpinelinux.org/alpine/edge/testing](http://dl-cdn.alpinelinux.org/alpine/edge/testing))
 
 The image installs the following extra packages:
 
 - [`ca-certificates`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/ca-certificates)
-- [`nano`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/nano)
 - [`curl`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/curl)
-- [`findutils`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/findutils)
 - [`su-exec`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/su-exec)
