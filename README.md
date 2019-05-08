@@ -25,6 +25,6 @@ The image enable the following repositories:
 
 The image installs the following extra packages:
 
-- [`ca-certificates`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/ca-certificates)
-- [`curl`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/curl)
-- [`su-exec`](https://pkgs.alpinelinux.org/package/v3.7/main/x86_64/su-exec)
+- [`ca-certificates`](https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/) Common CA certificates PEM files.
+- [`su-exec`](https://github.com/ncopa/su-exec) Switch user and group id, setgroups and exec.
+- [`wait4ports`](https://github.com/erikogan/wait4ports) A small utility to wait for network peer availability.
