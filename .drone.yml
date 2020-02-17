@@ -159,7 +159,6 @@ steps:
       dockerfile: 3.10/Dockerfile
       tags:
         - '3.10'
-        - 'latest'
 
   - name: alpine3.10-openrc
     image: plugins/docker
@@ -172,6 +171,35 @@ steps:
       dockerfile: 3.10/openrc/Dockerfile
       tags:
         - '3.10-openrc'
+
+kind: pipeline
+name: alpine3.11
+
+steps:
+  - name: alpine3.11
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
+      repo: dockage/alpine
+      dockerfile: 3.11/Dockerfile
+      tags:
+        - '3.11'
+        - 'latest'
+
+  - name: alpine3.11-openrc
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
+      repo: dockage/alpine
+      dockerfile: 3.11/openrc/Dockerfile
+      tags:
+        - '3.11-openrc'
 
 ---
 kind: pipeline
