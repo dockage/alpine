@@ -46,7 +46,7 @@ jobs:
       - name: Build images
         uses: docker/bake-action@v2
         with:
-          push: ${{ is_default_branch }}
+          push: "{{ is_default_branch }}"
           targets: ${{ matrix.variant }}
           files: |
             ${{ steps.meta.outputs.bake-file }}
