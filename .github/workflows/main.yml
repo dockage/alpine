@@ -31,7 +31,7 @@ jobs:
           tags: |
             type=raw,value=${{ matrix.alpine }},enable=${{ matrix.variant == '' }}
             type=raw,value=${{ matrix.alpine }}-${{ matrix.variant }},enable=${{ matrix.variant != '' }}
-            type=raw,value=latest,enable=${{ matrix.variant }}
+            type=raw,value=latest,enable=${{ matrix.latest }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
