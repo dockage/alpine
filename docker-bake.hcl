@@ -17,7 +17,7 @@ group "default" {
 
 target "base" {
   context    = "${ALPINE_VERSION}/"
-  dockerfile = "${ALPINE_VERSION}/Dockerfile"
+  dockerfile = "./Dockerfile"
   target     = "base"
   # tags       = tag("${ALPINE_VERSION}")
   platforms  = [
