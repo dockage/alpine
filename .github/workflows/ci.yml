@@ -1,4 +1,4 @@
-name: Dockage CI
+name: CI
 
 on:
   push:
@@ -26,6 +26,8 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
+          labels: |
+            maintainer=The Dockage Developers
           images: |
             dockage/alpine
           tags: |
@@ -52,7 +54,7 @@ jobs:
             ${{ steps.meta.outputs.bake-file }}
             ./docker-bake.hcl
         env:
-          ALPINE_VERSION: ${{ matrix.alpine }}
+          CONTEXT: ${{ matrix.alpine }}
 
       - name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v3
