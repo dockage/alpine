@@ -46,7 +46,7 @@ jobs:
       - name: Build images
         uses: docker/bake-action@v2
         with:
-          push: "{{ is_default_branch }}"
+          push: ${{ github.ref == 'refs/heads/master' }}
           targets: ${{ matrix.variant }}
           files: |
             ${{ steps.meta.outputs.bake-file }}
@@ -56,7 +56,7 @@ jobs:
 
       - name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v3
-        if: ${{ github.event_name == 'push' && is_default_branch }}
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
