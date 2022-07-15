@@ -2,6 +2,9 @@ variable "CONTEXT" {
   default = "."
 }
 
+// Special target: https://github.com/docker/metadata-action#bake-definition
+target "docker-metadata-action" {}
+
 group "default" {
   targets = ["base"]
 }
