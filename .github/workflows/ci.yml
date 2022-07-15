@@ -51,8 +51,8 @@ jobs:
           push: ${{ github.ref == 'refs/heads/master' }}
           targets: ${{ matrix.variant }}
           files: |
-            ${{ steps.meta.outputs.bake-file }}
             ./docker-bake.hcl
+            ${{ steps.meta.outputs.bake-file }}
         env:
           CONTEXT: ${{ matrix.alpine }}
 
