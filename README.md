@@ -1,4 +1,4 @@
-# alpine [![Docker Pulls](https://img.shields.io/docker/pulls/dockage/alpine)](https://hub.docker.com/r/dockage/alpine/) [![Docker Stars](https://badgen.net/docker/stars/dockage/alpine?icon=docker&label=stars)](https://hub.docker.com/r/dockage/alpine/) [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/dockage/alpine/CI/master)](https://github.com/dockage/alpine/actions/workflows/ci.yaml)
+# alpine [![Docker Pulls](https://badgen.net/docker/pulls/dockage/alpine?icon=docker&label=pulls)](https://hub.docker.com/r/dockage/alpine/) [![Docker Stars](https://badgen.net/docker/stars/dockage/alpine?icon=docker&label=stars)](https://hub.docker.com/r/dockage/alpine/) [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/dockage/alpine/CI/master)](https://github.com/dockage/alpine/actions/workflows/ci.yaml)
 
 [Alpine Linux](https://alpinelinux.org) is a Linux distribution built around [musl libc](https://www.musl-libc.org) and [BusyBox](https://www.busybox.net).
 
