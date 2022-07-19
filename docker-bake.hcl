@@ -3,7 +3,9 @@ variable "CONTEXT" {
 }
 
 // Special target: https://github.com/docker/metadata-action#bake-definition
-target "docker-metadata-action" {}
+target "docker-metadata-action" {
+  tags = ["dockage/alpine:local"]
+}
 
 group "default" {
   targets = ["base"]
