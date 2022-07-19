@@ -3,15 +3,14 @@ variable "CONTEXT" {
 }
 
 // Special target: https://github.com/docker/metadata-action#bake-definition
-target "docker-metadata-action" {
-  tags = ["dockage/alpine:local"]
-}
+target "docker-metadata-action" {}
 
 group "default" {
   targets = ["base"]
 }
 
 target "base" {
+  inherits  = ["docker-metadata-action"]
   context    = "${CONTEXT}/"
   target     = "base"
   platforms  = [
