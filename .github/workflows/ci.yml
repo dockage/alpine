@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "*" ]
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        alpine: [ "3.13" ]
+        variant: [ "", "openrc" ]
+        latest: [ false ]
+#        include:
+#          - alpine: 3.16
+#            variant: ""
+#            latest: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Docker metadata
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          labels: |
+            maintainer=The Dockage Developers
+          images: |
+            dockage/alpine
+          tags: |
+            type=raw,value=${{ matrix.alpine }},enable=${{ matrix.variant == '' }}
+            type=raw,value=${{ matrix.alpine }}-${{ matrix.variant }},enable=${{ matrix.variant != '' }}
+            type=raw,value=latest,enable=${{ matrix.latest }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to DockerHub
+        if: ${{ github.event_name != 'pull_request' }}
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Build images
+        uses: docker/bake-action@v2
+        with:
+          push: ${{ github.ref == 'refs/heads/master' }}
+          targets: ${{ matrix.variant }}
+          files: |
+            ./docker-bake.hcl
+            ${{ steps.meta.outputs.bake-file }}
+        env:
+          CONTEXT: ${{ matrix.alpine }}
+
+      - name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v3
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          short-description: ${{ github.event.repository.description }}

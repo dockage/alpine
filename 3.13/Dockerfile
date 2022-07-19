@@ -1,16 +1,13 @@
-FROM alpine:3.5
-
-LABEL maintainer="m.abdolirad@gmail.com" \
-    org.label-schema.name="alpine" \
-    org.label-schema.vendor="Dockage" \
-    org.label-schema.description="Docker image uses openRC as a process supervision on Alpine Linux" \
-    org.label-schema.version="3.5-openrc" \
-    org.label-schema.license="MIT"
+FROM alpine:3.13.10 AS base
 
 RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories \
     && echo '@edgecommunity http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories \
     && echo '@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
-    && apk add --no-cache openrc su-exec ca-certificates \
+    && apk add --no-cache su-exec ca-certificates
+
+FROM base AS openrc
+
+RUN apk add --no-cache openrc \
     # Disable getty's
     && sed -i 's/^\(tty\d\:\:\)/#\1/g' /etc/inittab \
     && sed -i \
