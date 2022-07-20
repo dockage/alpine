@@ -11,16 +11,23 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        alpine: [ "3.13", "3.14", "3.15", "3.16" ]
+        alpine: [ "3.13.10", "3.14.6", "3.15.4", "3.16.1" ]
         variant: [ "", "openrc" ]
         latest: [ false ]
         include:
-          - alpine: 3.16
+          - alpine: 3.16.1
             variant: ""
             latest: true
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - uses: actions/github-script@v6
+        id: alpine-minor-version
+        with:
+          # The script returns 1.15 from 1.15.10
+          script: return "${{ matrix.alpine }}".substr(0, "${{ matrix.alpine }}".lastIndexOf("."))
+          result-encoding: string
 
       - name: Docker metadata
         id: meta
@@ -32,7 +39,9 @@ jobs:
             dockage/alpine
           tags: |
             type=raw,value=${{ matrix.alpine }},enable=${{ matrix.variant == '' }}
+            type=raw,value=${{steps.alpine-minor-version.outputs.result}},enable=${{ matrix.variant == '' }}
             type=raw,value=${{ matrix.alpine }}-${{ matrix.variant }},enable=${{ matrix.variant != '' }}
+            type=raw,value=${{steps.alpine-minor-version.outputs.result}}-${{ matrix.variant }},enable=${{ matrix.variant != '' }}
             type=raw,value=latest,enable=${{ matrix.latest }}
 
       - name: Set up Docker Buildx
@@ -54,7 +63,7 @@ jobs:
             ./docker-bake.hcl
             ${{ steps.meta.outputs.bake-file }}
         env:
-          CONTEXT: ${{ matrix.alpine }}
+          CONTEXT: ${{steps.alpine-minor-version.outputs.result}}
 
       - name: Docker Hub Description
         uses: peter-evans/dockerhub-description@v3
