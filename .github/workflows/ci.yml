@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        alpine: [ "3.13", "3.14", "3.15", "3.16" ]
+        alpine: [ "3.13.12", "3.14.8", "3.15.6", "3.16.2" ]
         variant: [ "", "openrc" ]
         latest: [ false ]
         include:
@@ -31,8 +31,17 @@ jobs:
           images: |
             dockage/alpine
           tags: |
-            type=raw,value=${{ matrix.alpine }},enable=${{ matrix.variant == '' }}
-            type=raw,value=${{ matrix.alpine }}-${{ matrix.variant }},enable=${{ matrix.variant != '' }}
+            ### versioning strategy
+            # dockage/alpine:3.16.2
+            # dockage/alpine:3.16
+            # dockage/alpine:3
+            # dockage/alpine:3.16.2-openrc
+            # dockage/alpine:3.16-openrc
+            # dockage/alpine:3-openrc
+            # dockage/alpine:latest
+            type=semver,pattern={{version}},suffix=${{ format(matrix.variant != '' && '-{0}' || '', matrix.variant) }},value=${{ matrix.alpine }}
+            type=semver,pattern={{major}}.{{minor}},suffix=${{ format(matrix.variant != '' && '-{0}' || '', matrix.variant) }},value=${{ matrix.alpine }}
+            type=semver,pattern={{major}},suffix=${{ format(matrix.variant != '' && '-{0}' || '', matrix.variant) }},value=${{ matrix.alpine }}
             type=raw,value=latest,enable=${{ matrix.latest }}
 
       - name: Set up Docker Buildx
