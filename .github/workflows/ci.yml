@@ -37,6 +37,9 @@ jobs:
             maintainer=The Dockage Developers
           images: |
             dockage/alpine
+          flavor: |
+            latest=false
+            suffix=${{ format(matrix.variant != '' && '-{0}' || '', matrix.variant) }}
           tags: |
             ### versioning strategy
             # dockage/alpine:3.16.2
@@ -46,10 +49,10 @@ jobs:
             # dockage/alpine:3.16-openrc
             # dockage/alpine:3-openrc
             # dockage/alpine:latest
-            type=semver,pattern={{version}},suffix=${{ format(matrix.variant != '' && '-{0}' || '', matrix.variant) }},value=${{ matrix.alpine }}
-            type=semver,pattern={{major}}.{{minor}},suffix=${{ format(matrix.variant != '' && '-{0}' || '', matrix.variant) }},value=${{ matrix.alpine }}
-            type=semver,pattern={{major}},suffix=${{ format(matrix.variant != '' && '-{0}' || '', matrix.variant) }},value=${{ matrix.alpine }}
-            type=raw,value=latest,enable=${{ matrix.latest }}
+            type=semver,pattern={{version}},value=${{ matrix.alpine }}
+            type=semver,pattern={{major}}.{{minor}},value=${{ matrix.alpine }}
+            type=semver,pattern={{major}},value=${{ matrix.alpine }}
+            type=raw,value=latest,suffix=,enable=${{ matrix.latest }}
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
