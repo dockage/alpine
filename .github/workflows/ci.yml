@@ -16,7 +16,8 @@ jobs:
         latest: [ false ]
         include:
           - alpine: "3.16.2"
-            latest: [ true ]
+            variant: [ "", "openrc" ]
+            latest: true
     steps:
       - name: Checkout
         uses: actions/checkout@v2
