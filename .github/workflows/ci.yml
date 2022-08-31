@@ -15,7 +15,7 @@ jobs:
         variant: [ "", "openrc" ]
         latest: [ false ]
         include:
-          - alpine: 3.16.1
+          - alpine: 3.16.2
             variant: ""
             latest: true
     steps:
@@ -51,7 +51,7 @@ jobs:
             # dockage/alpine:latest
             type=semver,pattern={{version}},value=${{ matrix.alpine }}
             type=semver,pattern={{major}}.{{minor}},value=${{ matrix.alpine }}
-            type=semver,pattern={{major}},value=${{ matrix.alpine }}
+            type=semver,pattern={{major}},value=${{ matrix.alpine }},enable=${{ matrix.latest }}
             type=raw,value=latest,suffix=,enable=${{ matrix.latest }}
 
       - name: Set up Docker Buildx
