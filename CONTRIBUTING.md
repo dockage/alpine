@@ -23,7 +23,7 @@ The sign-off is a simple line at the end of the explanation for a commit. All co
 
 Then you just add a line to every git commit message:
 
-    Signed-off-by: Joe Smith <joe.smith@example.com>
+    Signed-off-by: Mohammad Abdolirad <m.abdolirad@example.com>
 
 Use your real name (sorry, no pseudonyms or anonymous contributions.)
 
