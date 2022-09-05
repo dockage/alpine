@@ -2,6 +2,7 @@
 
 [Alpine Linux](https://alpinelinux.org) is a Linux distribution built around [musl libc](https://www.musl-libc.org) and [BusyBox](https://www.busybox.net).
 
+## Supported tags and respective Dockerfile links
 | Versions                                                                                          |                                                                    Size                                                                                     |                                                                                 Layer                                                                                 |
 |:--------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
 | [`3.16.2`, `3.16`, `3`, `latest`](https://github.com/dockage/alpine/blob/master/3.16/Dockerfile)  | [![Docker Size (3.16)](https://badgen.net/docker/size/dockage/alpine/3.16?icon=docker&label=size)](https://hub.docker.com/r/dockage/alpine)                 |           [![Docker Layers (3.16)](https://badgen.net/docker/layers/dockage/alpine/3.16?icon=docker&label=layers)](https://hub.docker.com/r/dockage/alpine)           |
@@ -25,3 +26,10 @@ The image installs the following extra packages:
 
 - [`ca-certificates`](https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/) Common CA certificates PEM files.
 - [`su-exec`](https://github.com/ncopa/su-exec) Switch user and group id, setgroups and exec.
+
+## Quick reference
+* Where to get help: [website](https://dockage.dev/), [documentation](https://dockage.dev/docs/)
+* GitHub repo: [dockage/alpine](https://github.com/dockage/alpine)
+* Where to file issues: [GitHub issues](https://github.com/dockage/alpine/issues)
+* Maintained by: The Dockage team (info at dockage.dev)
+* License(s) - [license](https://github.com/dockage/alpine/blob/main/LICENSE), check 3rd party documentation for license information
