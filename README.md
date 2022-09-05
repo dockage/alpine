@@ -30,6 +30,6 @@ The image installs the following extra packages:
 ## Quick reference
 * Where to get help: [website](https://dockage.dev/), [documentation](https://dockage.dev/docs/)
 * GitHub repo: [dockage/alpine](https://github.com/dockage/alpine)
-* Where to file issues: [GitHub issues](https://github.com/dockage/alpine/issues)
+* Where to file issues: [GitHub Issues](https://github.com/dockage/alpine/issues)
 * Maintained by: The Dockage team (info at dockage.dev)
 * License(s) - [license](https://github.com/dockage/alpine/blob/main/LICENSE), check 3rd party documentation for license information
