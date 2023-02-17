@@ -1,9 +1,9 @@
-FROM alpine:3.13.12 AS base
+FROM alpine:3.17.2 AS base
 
 RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories \
     && echo '@edgecommunity http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories \
     && echo '@testing http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
-    && apk add --no-cache su-exec ca-certificates
+    && apk add --no-cache --update --upgrade su-exec ca-certificates
 
 FROM base AS openrc
 
