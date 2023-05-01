@@ -69,7 +69,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build images
-        uses: docker/bake-action@v2
+        uses: docker/bake-action@v3
         with:
           push: ${{ github.ref_name == github.event.repository.default_branch }}
           targets: ${{ matrix.variant }}
