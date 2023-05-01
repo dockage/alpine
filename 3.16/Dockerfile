@@ -8,6 +8,8 @@ RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repo
 FROM base AS openrc
 
 RUN apk add --no-cache openrc \
+    && apk add --no-cache --virtual .build-dependencies uuidgen \
+    && uuidgen -r > /etc/machine-id \
     # Disable getty's
     && sed -i 's/^\(tty\d\:\:\)/#\1/g' /etc/inittab \
     && sed -i \
@@ -30,6 +32,7 @@ RUN apk add --no-cache openrc \
             /etc/init.d/modloop \
     # Can't do cgroups
     && sed -i 's/\tcgroup_add_service/\t#cgroup_add_service/g' /lib/rc/sh/openrc-run.sh \
-    && sed -i 's/VSERVER/DOCKER/Ig' /lib/rc/sh/init.sh
+    && sed -i 's/VSERVER/DOCKER/Ig' /lib/rc/sh/init.sh \
+    && apk del .build-dependencies
 
 CMD ["/sbin/init"]
