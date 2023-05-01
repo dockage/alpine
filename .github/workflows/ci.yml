@@ -12,14 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        alpine: [ "3.14.9", "3.15.7", "3.16.4", "3.17.2" ]
+        alpine: [ "3.14.10", "3.15.8", "3.16.5", "3.17.3" ]
         variant: [ "", "openrc" ]
         latest: [ false ]
         include:
-          - alpine: "3.17.2"
+          - alpine: "3.17.3"
             variant: ""
             latest: true
-          - alpine: "3.17.2"
+          - alpine: "3.17.3"
             variant: "openrc"
             latest: true
     steps:
