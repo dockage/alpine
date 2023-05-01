@@ -1,33 +1,5 @@
 version: 2
 updates:
-  - package-ecosystem: "docker"
-    directory: "/3.14"
-    schedule:
-      interval: "daily"
-    assignees:
-      - "atkrad"
-
-  - package-ecosystem: "docker"
-    directory: "/3.15"
-    schedule:
-      interval: "daily"
-    assignees:
-      - "atkrad"
-
-  - package-ecosystem: "docker"
-    directory: "/3.16"
-    schedule:
-      interval: "daily"
-    assignees:
-      - "atkrad"
-
-  - package-ecosystem: "docker"
-    directory: "/3.17"
-    schedule:
-      interval: "daily"
-    assignees:
-      - "atkrad"
-
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
