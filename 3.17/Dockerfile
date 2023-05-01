@@ -30,6 +30,7 @@ RUN apk add --no-cache openrc \
             /etc/init.d/modules \
             /etc/init.d/modules-load \
             /etc/init.d/modloop \
+            /etc/init.d/machine-id \
     # Can't do cgroups
     && sed -i 's/\tcgroup_add_service/\t#cgroup_add_service/g' /lib/rc/sh/openrc-run.sh \
     && sed -i 's/VSERVER/DOCKER/Ig' /lib/rc/sh/init.sh \
