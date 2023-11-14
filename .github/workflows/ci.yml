@@ -26,7 +26,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - uses: actions/github-script@v6
+      - uses: actions/github-script@v7
         id: alpine-minor-version
         with:
           # The script returns 1.15 from 1.15.10
