@@ -1,4 +1,4 @@
-FROM alpine:3.18.3 AS base
+FROM alpine:3.18.5 AS base
 
 RUN echo '@edge http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/repositories \
     && echo '@edgecommunity http://dl-cdn.alpinelinux.org/alpine/edge/community' >> /etc/apk/repositories \
